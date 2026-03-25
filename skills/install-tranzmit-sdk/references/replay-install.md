@@ -1,12 +1,18 @@
 # Replay install reference
 
-```ts
-import { installTranzmitReplay } from '@tranzmit/web';
+Preferred path: patch the customer app directly.
 
-await installTranzmitReplay({
-  apiKey: process.env.NEXT_PUBLIC_TRANZMIT_API_KEY!,
-  endpoint: process.env.NEXT_PUBLIC_TRANZMIT_ENDPOINT!,
-});
+## Manual replay snippet
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/rrweb@latest/dist/rrweb-all.min.js"></script>
+<script>
+  window.TRANZMIT_CONFIG = {
+    apiKey: 'tranzmit_...',
+    endpoint: 'https://app.tranzmit.com'
+  };
+</script>
+<script src="https://app.tranzmit.com/tranzmit-replay.js"></script>
 ```
 
-rrweb must load before `tranzmit-replay.js`, which the package handles automatically.
+rrweb must load before `tranzmit-replay.js`.

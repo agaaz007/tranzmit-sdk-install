@@ -1,15 +1,18 @@
 # Widget install reference
 
-Use the app's authenticated client shell.
+Preferred path: patch the customer app directly.
 
-```ts
-import { installTranzmitWidget } from '@tranzmit/web';
+## Manual widget snippet
 
-installTranzmitWidget({
-  apiKey: process.env.NEXT_PUBLIC_TRANZMIT_API_KEY!,
-  endpoint: process.env.NEXT_PUBLIC_TRANZMIT_ENDPOINT!,
-  distinctId: user.id,
-});
+```html
+<script>
+  window.TRANZMIT_WIDGET_CONFIG = {
+    apiKey: 'tranzmit_...',
+    endpoint: 'https://app.tranzmit.com',
+    distinctId: user.id
+  };
+</script>
+<script src="https://app.tranzmit.com/tranzmit-widget.js"></script>
 ```
 
 ## Good `distinctId` values

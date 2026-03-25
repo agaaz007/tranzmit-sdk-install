@@ -1,31 +1,33 @@
 ---
 name: install-tranzmit-sdk
-description: Install Tranzmit into a client codebase using the public Tranzmit package and docs. Use when asked to add the Tranzmit widget, install replay capture, wire Tranzmit into Next.js or React, or generate the exact integration snippet for a customer app.
+description: Install Tranzmit into a client codebase with Claude or another coding agent. Use when asked to add the Tranzmit widget, install replay capture, wire Tranzmit into Next.js or React, or generate the exact integration patch for a customer app.
 ---
 
-Install Tranzmit using the public integration surface, not private product internals.
+Install Tranzmit directly into the customer's codebase using the app's existing framework, auth flow, and layout structure.
 
 ## Default approach
-1. Prefer the public npm package `@tranzmit/web`.
+1. Prefer a direct Claude-guided integration over adding a package dependency.
 2. Read only the relevant reference file for the target integration.
 3. Install in the app's global authenticated shell when possible.
-4. Use env vars for `apiKey` and `endpoint` unless the repo already has a secure config pattern.
+4. Use env vars or existing config patterns for `apiKey` and `endpoint`.
 5. Reuse the app's real stable user ID for `distinctId`.
+6. Only use the package helper if the user explicitly wants a package-based install.
 
 ## References
-- `references/package-install.md`
+- `references/claude-prompts.md`
 - `references/widget-install.md`
 - `references/replay-install.md`
+- `references/package-install.md`
 
 ## Rules
-- Prefer package install over raw script tags.
-- Fall back to manual snippets only if the repo cannot add npm dependencies.
+- Prefer direct integration over adding dependencies when both are equally clean.
 - Do not hardcode production secrets into source files.
 - Install once globally instead of duplicating per-page.
 - Keep SSR-safe boundaries intact.
+- Keep browser-only code out of server-only files.
 
 ## Expected output
-- `@tranzmit/web` added or referenced
 - one app-level bootstrap point wired in
-- env placeholders or config values documented
+- config values or env placeholders documented
+- widget, replay, or both installed cleanly
 - light validation run when practical

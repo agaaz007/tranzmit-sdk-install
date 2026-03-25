@@ -1,14 +1,22 @@
 # Tranzmit Integration Overview
 
-Tranzmit should have three public integration surfaces:
+Tranzmit is designed to be installed **Claude-first**.
 
-1. **npm package**: `@tranzmit/web`
-2. **copy-paste docs**: for teams that want manual install
-3. **agent skill**: for Claude/Codex-style AI installs
+Primary surfaces:
 
-This keeps customer onboarding simple whether they prefer code, docs, or AI assistance.
+1. **Claude skill** — preferred path
+2. **manual docs** — fallback path
+3. **optional package** — secondary helper for teams that want dependency-based setup
+
+Why Claude-first works better:
+
+- installation depends on framework and routing model
+- auth/user identity already exists in the customer app
+- widget setup must use a stable `distinctId`
+- replay setup must stay browser-only and load in the right order
 
 Recommended reading order:
+- `use-with-claude.md`
 - `quickstart.md`
 - `widget-install.md`
 - `replay-install.md`

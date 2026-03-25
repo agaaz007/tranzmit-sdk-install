@@ -1,15 +1,23 @@
 # Tranzmit Quickstart
 
-If you want the fastest path for customers, recommend this order:
+## Default recommendation
 
-1. Install `@tranzmit/web`
-2. Add the widget or replay bootstrap in the app shell
-3. Set `NEXT_PUBLIC_TRANZMIT_API_KEY` and `NEXT_PUBLIC_TRANZMIT_ENDPOINT`
-4. Pass a stable logged-in user ID as `distinctId` for widget targeting
+Use Claude to install Tranzmit instead of wiring it by hand.
+
+1. Open the app in Claude Code, Codex, or Conductor
+2. Give Claude access to this repo or the `install-tranzmit-sdk` skill
+3. Tell Claude whether you want widget, replay, or both
+4. Provide your Tranzmit project API key and endpoint
+
+## Recommended prompt
+
+```text
+Install Tranzmit in this app. Use the existing auth flow, install it once globally, and keep the integration SSR safe.
+```
 
 ## Important note about the API key
 
-The Tranzmit project API key used by the browser SDK is a **publishable project key**, not a secret admin credential.
+The Tranzmit project API key used by the browser integration is a **publishable project key**, not a secret admin credential.
 It is expected to be used in browser code, similar to other client-side analytics keys.
 
 Still:
@@ -17,23 +25,8 @@ Still:
 - rotate it if exposed in the wrong place
 - never reuse private provider secrets in the browser
 
-## Fastest Next.js widget bootstrap
+## If the customer does not use Claude
 
-```tsx
-'use client';
-
-import { useEffect } from 'react';
-import { installTranzmitWidget } from '@tranzmit/web';
-
-export function TranzmitBootstrap({ userId }: { userId: string }) {
-  useEffect(() => {
-    installTranzmitWidget({
-      apiKey: process.env.NEXT_PUBLIC_TRANZMIT_API_KEY!,
-      endpoint: process.env.NEXT_PUBLIC_TRANZMIT_ENDPOINT!,
-      distinctId: userId,
-    });
-  }, [userId]);
-
-  return null;
-}
-```
+Use:
+- `widget-install.md` for widget setup
+- `replay-install.md` for replay setup

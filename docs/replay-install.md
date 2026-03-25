@@ -1,25 +1,12 @@
 # Replay Install
 
-Use the replay SDK when you want rrweb session replay data sent to Tranzmit.
+Use this only when you are not letting Claude install it for you.
 
-## npm install
+## Claude-first prompt
 
-```bash
-npm install @tranzmit/web
+```text
+Install Tranzmit replay tracking in this app. Keep it browser-only, load rrweb before Tranzmit replay, and avoid duplicate installs.
 ```
-
-## Browser bootstrap
-
-```ts
-import { installTranzmitReplay } from '@tranzmit/web';
-
-await installTranzmitReplay({
-  apiKey: process.env.NEXT_PUBLIC_TRANZMIT_API_KEY!,
-  endpoint: process.env.NEXT_PUBLIC_TRANZMIT_ENDPOINT!,
-});
-```
-
-This key is meant to be browser-safe and project-scoped. Do not substitute backend provider secrets.
 
 ## Manual fallback
 
@@ -33,3 +20,5 @@ This key is meant to be browser-safe and project-scoped. Do not substitute backe
 </script>
 <script src="https://app.tranzmit.com/tranzmit-replay.js"></script>
 ```
+
+This key is meant to be browser-safe and project-scoped. Do not substitute backend provider secrets.

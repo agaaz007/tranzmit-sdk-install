@@ -1,6 +1,12 @@
 # `@tranzmit/web`
 
-Browser helpers for loading the Tranzmit widget and replay SDKs.
+This package is an **optional helper** for teams that want a dependency-based integration.
+
+The preferred Tranzmit install path is still:
+- use Claude or another coding agent with `skills/install-tranzmit-sdk`
+- let the agent patch the app directly
+
+Use this package only if the customer specifically wants npm-based setup.
 
 ## Install
 

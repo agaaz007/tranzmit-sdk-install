@@ -1,36 +1,24 @@
 # Widget Install
 
-Use the widget SDK when you want Tranzmit to show triggered voice interview invites inside a customer-facing web app.
+Use this only when you are not letting Claude install it for you.
 
-## npm install
+## Claude-first prompt
 
-```bash
-npm install @tranzmit/web
+```text
+Install the Tranzmit widget in this app. Use the existing auth flow and a stable logged-in user ID for distinctId.
 ```
 
-## Next.js client component
+## Manual fallback
 
-```tsx
-'use client';
-
-import { useEffect } from 'react';
-import { installTranzmitWidget, updateTranzmitWidgetConfig } from '@tranzmit/web';
-
-export function TranzmitWidgetBootstrap({ userId }: { userId: string }) {
-  useEffect(() => {
-    installTranzmitWidget({
-      apiKey: process.env.NEXT_PUBLIC_TRANZMIT_API_KEY!,
-      endpoint: process.env.NEXT_PUBLIC_TRANZMIT_ENDPOINT!,
-      distinctId: userId,
-    });
-  }, [userId]);
-
-  useEffect(() => {
-    updateTranzmitWidgetConfig({ distinctId: userId });
-  }, [userId]);
-
-  return null;
-}
+```html
+<script>
+  window.TRANZMIT_WIDGET_CONFIG = {
+    apiKey: 'tranzmit_...',
+    endpoint: 'https://app.tranzmit.com',
+    distinctId: currentUser.id
+  };
+</script>
+<script src="https://app.tranzmit.com/tranzmit-widget.js"></script>
 ```
 
 ## Required values

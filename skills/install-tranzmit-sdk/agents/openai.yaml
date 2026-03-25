@@ -1,0 +1,3 @@
+display_name: Install Tranzmit SDK
+short_description: Add Tranzmit widget or replay to a client app using the public package.
+default_prompt: Install Tranzmit into this codebase using @tranzmit/web and the app's existing auth and layout patterns.

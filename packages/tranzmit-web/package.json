@@ -1,0 +1,34 @@
+{
+  "name": "@tranzmit/web",
+  "version": "0.1.0",
+  "description": "Browser helpers for installing the Tranzmit widget and replay SDKs.",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agaaz007/tranzmit-sdk-install.git",
+    "directory": "packages/tranzmit-web"
+  },
+  "homepage": "https://github.com/agaaz007/tranzmit-sdk-install",
+  "bugs": {
+    "url": "https://github.com/agaaz007/tranzmit-sdk-install/issues"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "keywords": [
+    "tranzmit",
+    "widget",
+    "replay",
+    "rrweb",
+    "browser-sdk"
+  ]
+}

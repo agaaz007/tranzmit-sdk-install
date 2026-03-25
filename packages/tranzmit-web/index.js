@@ -70,8 +70,25 @@ function installTranzmitWidget(config) {
 
   return loadScript({
     id: WIDGET_SCRIPT_ID,
-    src: config.scriptUrl || `${endpoint}/tranzmit-widget.js`,
+    src: config.widgetScriptUrl || config.scriptUrl || `${endpoint}/tranzmit-widget.js`,
   });
+}
+
+async function installTranzmitCancelFlow(config) {
+  const installWidget = config.widget !== false;
+  const installReplay = config.replay !== false;
+
+  const results = { widget: null, replay: null };
+
+  if (installWidget) {
+    results.widget = await installTranzmitWidget(config);
+  }
+
+  if (installReplay) {
+    results.replay = await installTranzmitReplay(config);
+  }
+
+  return results;
 }
 
 function updateTranzmitWidgetConfig(partialConfig) {
@@ -136,7 +153,7 @@ async function installTranzmitReplay(config) {
 
   return loadScript({
     id: REPLAY_SCRIPT_ID,
-    src: config.scriptUrl || `${endpoint}/tranzmit-replay.js`,
+    src: config.replayScriptUrl || config.scriptUrl || `${endpoint}/tranzmit-replay.js`,
   });
 }
 
@@ -179,6 +196,7 @@ function removeTranzmitReplay(options) {
 
 module.exports = {
   installTranzmitWidget,
+  installTranzmitCancelFlow,
   updateTranzmitWidgetConfig,
   removeTranzmitWidget,
   installTranzmitReplay,

@@ -12,7 +12,7 @@ Use Claude to install Tranzmit instead of wiring it by hand.
 ## Recommended prompt
 
 ```text
-Install Tranzmit in this app. Use the existing auth flow, install it once globally, and keep the integration SSR safe.
+Install Tranzmit on our cancel flow. Find the cancellation CTA, reuse the app's PostHog or Amplitude distinct ID if available, otherwise use the stable logged-in user ID, and wire the real Tranzmit widget/replay SDK in the smallest SSR-safe integration point.
 ```
 
 ## Important note about the API key
@@ -28,5 +28,6 @@ Still:
 ## If the customer does not use Claude
 
 Use:
+- `cancel-flow-install.md` for the real integration goal
 - `widget-install.md` for widget setup
 - `replay-install.md` for replay setup

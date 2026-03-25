@@ -1,6 +1,6 @@
 # Replay install reference
 
-Preferred path: patch the customer app directly.
+Preferred path: patch the customer app directly using the actual script contract from `artifacts/tranzmit-replay.js`.
 
 ## Manual replay snippet
 

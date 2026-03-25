@@ -2,6 +2,8 @@
 
 Use this only when you are not letting Claude install it for you.
 
+This installs the actual replay browser script copied in `artifacts/tranzmit-replay.js`.
+
 ## Claude-first prompt
 
 ```text

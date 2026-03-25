@@ -8,6 +8,23 @@ The preferred Tranzmit install path is still:
 
 Use this package only if the customer specifically wants npm-based setup.
 
+## Simplest helper
+
+If you want one call that mirrors the main Tranzmit cancel-flow setup, use:
+
+```js
+import { installTranzmitCancelFlow } from '@tranzmit/web';
+
+await installTranzmitCancelFlow({
+  apiKey: process.env.NEXT_PUBLIC_TRANZMIT_API_KEY,
+  endpoint: process.env.NEXT_PUBLIC_TRANZMIT_ENDPOINT,
+  distinctId: currentUser.id,
+});
+```
+
+By default this installs both the widget and replay helpers.
+If you need custom script locations, use `widgetScriptUrl` and `replayScriptUrl` separately.
+
 ## Install
 
 ```bash

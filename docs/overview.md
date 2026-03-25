@@ -17,6 +17,8 @@ Why Claude-first works better:
 
 Recommended reading order:
 - `use-with-claude.md`
+- `cancel-flow-install.md`
+- `actual-sdk-surface.md`
 - `quickstart.md`
 - `widget-install.md`
 - `replay-install.md`

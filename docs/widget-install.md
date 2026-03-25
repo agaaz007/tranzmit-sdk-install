@@ -2,6 +2,8 @@
 
 Use this only when you are not letting Claude install it for you.
 
+This installs the actual widget browser script copied in `artifacts/tranzmit-widget.js`.
+
 ## Claude-first prompt
 
 ```text

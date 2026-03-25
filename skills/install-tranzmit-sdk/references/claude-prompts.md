@@ -2,6 +2,12 @@
 
 Use prompts like these when installing Tranzmit into a customer codebase.
 
+## Cancel flow
+
+```text
+Install Tranzmit on our cancel flow. Find the cancellation CTA, reuse the app's PostHog or Amplitude distinct ID if available, otherwise use the stable logged-in user ID, and wire the real Tranzmit widget/replay SDK in the smallest SSR-safe integration point.
+```
+
 ## Widget
 
 ```text

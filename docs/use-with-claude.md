@@ -14,6 +14,12 @@ Make sure the agent can read this repo or at least the `skills/install-tranzmit-
 
 Paste one of these prompts.
 
+### Cancel flow install
+
+```text
+Install Tranzmit on our cancel flow. Find the cancellation CTA, reuse the app's PostHog or Amplitude distinct ID if available, otherwise use the stable logged-in user ID, and wire the real Tranzmit widget/replay SDK in the smallest SSR-safe integration point.
+```
+
 ### Widget only
 
 ```text
@@ -34,10 +40,10 @@ Install both the Tranzmit widget and Tranzmit replay in this app. Reuse the app'
 
 ## Inputs the customer should give Claude
 
-- Tranzmit project API key
-- Tranzmit endpoint
-- whether they want widget, replay, or both
-- the correct logged-in user ID to use for `distinctId`
+- where the cancel flow or cancellation CTA lives
+- whether the app already uses PostHog or Amplitude
+- the correct logged-in user ID or analytics distinct ID to use for `distinctId`
+- Tranzmit project API key and endpoint if they are not already configured in the repo
 
 ## Good `distinctId` examples
 
